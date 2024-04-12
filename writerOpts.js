@@ -38,10 +38,17 @@ function getWriterOpts () {
         discard = false
       })
 
-      console.log(commit)
+      // console.log(commit)
       let arr = commit.type.split(' ')
-
-      commit.type = arr[arr.length - 1]
+      let type = arr[arr.length - 1];
+      // 判断type是否包含括号
+      if (type.indexOf('(') !== -1) {
+        arr = type.split('(')
+        commit.type = arr[0]
+        commit.scope = arr[1].replace(')', '')
+      } else {
+        commit.type = type
+      }
 
       if (commit.type === 'feat') {
         commit.type = 'Features'
@@ -80,7 +87,7 @@ function getWriterOpts () {
           ? `${context.host}/${context.owner}/${context.repository}`
           : context.repoUrl
         if (url) {
-          url = `${url}/issues/`
+          url = `https://redmine.blueorigintech.com/issues/`
           // Issue URLs.
           commit.subject = commit.subject.replace(/#([0-9]+)/g, (_, issue) => {
             issues.push(issue)

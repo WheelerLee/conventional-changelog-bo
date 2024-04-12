@@ -3,6 +3,7 @@
 function createParserOpts () {
   return {
     headerPattern: /^(.*)(?:\((.*)\))?:\s*(.*)$/,
+    // headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
     headerCorrespondence: [
       'type',
       'scope',
