@@ -1,0 +1,33 @@
+{
+  "name": "conventional-changelog-bo",
+  "version": "1.0.1",
+  "description": "conventional-changelog bo preset",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WheelerLee/conventional-changelog-bo.git"
+  },
+  "keywords": [
+    "conventional-changelog"
+  ],
+  "files": [
+    "conventionalChangelog.js",
+    "conventionalRecommendedBump.js",
+    "index.js",
+    "parserOpts.js",
+    "writerOpts.js",
+    "templates"
+  ],
+  "author": "WheelerLee",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WheelerLee/conventional-changelog-bo/issues"
+  },
+  "homepage": "https://github.com/WheelerLee/conventional-changelog-bo",
+  "dependencies": {
+    "compare-func": "^2.0.0"
+  }
+}
